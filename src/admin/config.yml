@@ -1,0 +1,278 @@
+backend:
+  name: github
+  repo: lukinokubis/golfnitra.github.io
+  branch: main
+  # PAT login — user enters their GitHub Personal Access Token in the CMS UI.
+  # To upgrade to OAuth later, deploy sveltia-cms-auth to Cloudflare Workers,
+  # create a GitHub OAuth App, then add:
+  #   base_url: https://YOUR_WORKER.workers.dev
+  # and remove the auth_type line below.
+  auth_type: implicit
+
+media_folder: src/img
+public_folder: /img
+
+locale: sk
+
+# ─── Collections ────────────────────────────────────────────────────────────
+
+collections:
+
+  # ── Info-blok pages (the section the owner can freely extend) ─────────────
+  - name: pages
+    label: "Info-blok — stránky"
+    label_singular: "Stránka"
+    folder: src/content/pages
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    editor:
+      preview: false
+    fields:
+      - { label: "Názov", name: title, widget: string }
+      - { label: "Poradie v menu", name: nav_order, widget: number, default: 99 }
+      - { label: "URL slug", name: slug, widget: string, hint: "Napr. 'nova-stranka' → /info-blok/nova-stranka/" }
+      - { label: "Permalink", name: permalink, widget: string, hint: "Nechajte prázdne — vyplní sa automaticky podľa slugu." }
+      - { label: "Zverejniť", name: published, widget: boolean, default: true }
+      - { label: "Obsah", name: body, widget: markdown }
+      - { label: "Layout", name: layout, widget: hidden, default: "layouts/page.njk" }
+
+  # ── Announcements (homepage news feed) ───────────────────────────────────
+  - name: announcements
+    label: "Oznámenia"
+    label_singular: "Oznámenie"
+    folder: src/content/announcements
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: md
+    format: frontmatter
+    editor:
+      preview: false
+    fields:
+      - { label: "Nadpis", name: title, widget: string }
+      - { label: "Dátum", name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Pripnuté na vrch", name: pinned, widget: boolean, default: false }
+      - { label: "Zverejniť", name: published, widget: boolean, default: true }
+      - { label: "Text oznámenia", name: body, widget: markdown }
+
+  # ── Courses ───────────────────────────────────────────────────────────────
+  - name: courses
+    label: "Ihriská"
+    label_singular: "Ihrisko"
+    folder: src/content/courses
+    create: false
+    extension: md
+    format: frontmatter
+    editor:
+      preview: false
+    fields:
+      - { label: "Názov", name: title, widget: string }
+      - { label: "Slug", name: slug, widget: string }
+      - { label: "Titulný obrázok", name: hero_image, widget: image, required: false }
+      - { label: "Mapa ihriska (URL)", name: course_map, widget: string, required: false }
+      - name: features
+        label: "Vlastnosti ihriska"
+        widget: list
+        field: { label: "Vlastnosť", name: item, widget: string }
+      - { label: "Opis", name: body, widget: markdown }
+
+  # ── Membership tiers (single-file) ────────────────────────────────────────
+  - name: membership
+    label: "Členstvo"
+    files:
+      - name: membership
+        label: "Členstvo — tiers a podmienky"
+        file: src/content/membership.yaml
+        editor:
+          preview: false
+        fields:
+          - { label: "Poznámka k vstupnému poplatku", name: entry_fee_note, widget: string }
+          - name: notes
+            label: "Ďalšie poznámky"
+            widget: list
+            field: { label: "Poznámka", name: item, widget: string }
+          - name: tiers
+            label: "Typy členstva"
+            widget: list
+            fields:
+              - { label: "Názov", name: name, widget: string }
+              - { label: "Slug", name: slug, widget: string }
+              - { label: "Odporúčané (featured)", name: featured, widget: boolean, default: false }
+              - { label: "Limit", name: limit, widget: string }
+              - name: prices
+                label: "Ceny"
+                widget: list
+                fields:
+                  - { label: "Kategória", name: category, widget: string }
+                  - { label: "Suma", name: amount, widget: string }
+                  - { label: "Vstupný poplatok", name: entry_fee, widget: string, required: false }
+                  - { label: "Obmedzenie", name: limit, widget: string, required: false }
+              - name: benefits
+                label: "Výhody"
+                widget: list
+                field: { label: "Výhoda", name: item, widget: string }
+
+  # ── Pricing (single-file) ─────────────────────────────────────────────────
+  - name: pricing
+    label: "Cenník"
+    files:
+      - name: pricing
+        label: "Cenník 2026"
+        file: src/content/pricing.yaml
+        editor:
+          preview: false
+        fields:
+          - { label: "Začiatok sezóny", name: season_start, widget: string }
+          - { label: "Koniec sezóny", name: season_end, widget: string }
+          - { label: "Poznámka k otváracím hodinám", name: open_hours_note, widget: text }
+          - { label: "Poznámka mimo sezóny", name: off_season_note, widget: text }
+          - name: reception_hours
+            label: "Otváracie hodiny recepcie"
+            widget: list
+            fields:
+              - { label: "Deň", name: day, widget: string }
+              - { label: "Hodiny", name: hours, widget: string }
+          - name: green_fees
+            label: "Green fee"
+            widget: list
+            fields:
+              - { label: "Typ", name: item, widget: string }
+              - { label: "Cena", name: price, widget: string }
+          - name: vouchers
+            label: "Voučery"
+            widget: list
+            fields:
+              - { label: "Voučer", name: item, widget: string }
+              - { label: "Cena", name: price, widget: string }
+          - name: payment_methods
+            label: "Spôsoby platby"
+            widget: list
+            field: { label: "Spôsob", name: item, widget: string }
+          - { label: "QR kód (URL obrázka)", name: qr_image, widget: string, required: false }
+
+  # ── Hole-in-one records (single-file) ─────────────────────────────────────
+  - name: hole_in_one
+    label: "Hole-in-One a Eagle"
+    files:
+      - name: hole_in_one
+        label: "Hole-in-One, Eagle, Albatros"
+        file: src/content/hole-in-one.yaml
+        editor:
+          preview: false
+        fields:
+          - { label: "Poznámka", name: note, widget: string }
+          - name: hole_in_one_nesuazny
+            label: "Nesúťažný Hole-in-One"
+            widget: list
+            fields:
+              - { label: "Dátum", name: date, widget: string }
+              - { label: "Hráč/-ka", name: player, widget: string }
+              - { label: "Jamka", name: hole, widget: string }
+              - { label: "Vzdialenosť", name: distance, widget: string }
+          - name: hole_in_one_suazny
+            label: "Súťažný Hole-in-One"
+            widget: list
+            fields:
+              - { label: "Dátum", name: date, widget: string }
+              - { label: "Hráč/-ka", name: player, widget: string }
+              - { label: "Jamka", name: hole, widget: string }
+              - { label: "Vzdialenosť", name: distance, widget: string }
+          - name: eagle
+            label: "Eagle"
+            widget: list
+            fields:
+              - { label: "Dátum", name: date, widget: string }
+              - { label: "Hráč/-ka", name: player, widget: string }
+              - { label: "Jamka", name: hole, widget: string }
+              - { label: "Poznámka", name: note, widget: string, required: false }
+          - name: albatros
+            label: "Albatros"
+            widget: list
+            fields:
+              - { label: "Dátum", name: date, widget: string }
+              - { label: "Hráč/-ka", name: player, widget: string }
+              - { label: "Jamka", name: hole, widget: string }
+              - { label: "Poznámka", name: note, widget: string, required: false }
+
+  # ── Club champions (single-file) ──────────────────────────────────────────
+  - name: club_champions
+    label: "Majstri klubu"
+    files:
+      - name: club_champions
+        label: "História majstrov"
+        file: src/content/club-champions.yaml
+        editor:
+          preview: false
+        fields:
+          - name: years
+            label: "Roky"
+            widget: list
+            fields:
+              - { label: "Rok", name: year, widget: number }
+              - name: tournaments
+                label: "Turnaje"
+                widget: list
+                fields:
+                  - { label: "Názov turnaja", name: name, widget: string }
+                  - { label: "Dátum", name: date, widget: string, required: false }
+                  - name: results
+                    label: "Výsledky"
+                    widget: list
+                    fields:
+                      - { label: "Kategória", name: category, widget: string }
+                      - { label: "Víťaz/-ka", name: winner, widget: string }
+                      - { label: "Skóre", name: score, widget: string, required: false }
+
+  # ── External trainers (single-file) ───────────────────────────────────────
+  - name: external_trainers
+    label: "Externí tréneri"
+    files:
+      - name: external_trainers
+        label: "Zoznam externých trénerov"
+        file: src/content/external-trainers.yaml
+        editor:
+          preview: false
+        fields:
+          - { label: "Úvod", name: intro, widget: text }
+          - name: perks
+            label: "Výhody pre externých trénerov"
+            widget: list
+            field: { label: "Výhoda", name: item, widget: string }
+          - name: trainers
+            label: "Tréneri"
+            widget: list
+            fields:
+              - { label: "Meno", name: name, widget: string }
+              - { label: "Trieda", name: class, widget: string }
+              - { label: "Klub / Organizácia", name: club, widget: string, required: false }
+              - { label: "URL", name: url, widget: string, required: false }
+          - { label: "Poznámka", name: note, widget: string, required: false }
+          - { label: "FAQ — Otázka", name: faq_question, widget: string, required: false }
+          - { label: "FAQ — Odpoveď", name: faq_answer, widget: markdown, required: false }
+
+  # ── Site-wide settings ────────────────────────────────────────────────────
+  - name: site_settings
+    label: "Nastavenia stránky"
+    files:
+      - name: site
+        label: "Kontakt a firemné údaje"
+        file: src/_data/site.yaml
+        editor:
+          preview: false
+        fields:
+          - { label: "Názov stránky", name: site_title, widget: string }
+          - { label: "Meta popis", name: description, widget: text }
+          - { label: "Názov klubu", name: club_name, widget: string }
+          - { label: "Adresa ihriska", name: address_ihrisko, widget: string }
+          - { label: "Adresa klubu (sídlo)", name: address_klub, widget: string }
+          - { label: "Telefón", name: phone, widget: string }
+          - { label: "E-mail", name: email, widget: string }
+          - { label: "IČO klubu", name: ico_klub, widget: string }
+          - { label: "IČO prevádzky", name: ico_prevadzka, widget: string }
+          - { label: "Bankový účet (klub)", name: bank_klub, widget: string }
+          - { label: "IBAN", name: iban, widget: string }
+          - { label: "Bankový účet (prevádzka)", name: bank_prevadzka, widget: string }
+          - { label: "Facebook URL", name: facebook, widget: string }
+          - { label: "YouTube URL", name: youtube, widget: string }
+          - { label: "Prezident klubu", name: president, widget: string }

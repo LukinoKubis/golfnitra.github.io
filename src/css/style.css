@@ -1365,15 +1365,30 @@ nav.sticky .logo { height: 5rem; }
     display: none;
     flex-direction: column;
     align-items: stretch;
-    position: absolute;
-    top: 100%; left: 0; right: 0;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
     background: rgba(1, 20, 10, .98);
-    padding: 1rem 0 2rem;
+    padding: 7rem 0 2rem;
+    overflow-y: auto;
+    z-index: 150;
   }
   .nav-links.open { display: flex; }
-  .navigation_link { padding: 1.2rem 2.5rem; }
+  .nav-toggle { z-index: 200; }
+  .navigation_link { padding: 1.4rem 2.5rem; font-size: 1.5rem; }
   .nav-item { flex-direction: column; align-items: stretch; }
-  .nav-dropdown { position: static; transform: none; min-width: 100%; box-shadow: none; border-top: none; }
+  .nav-item > .navigation_link::before { float: right; }
+  .nav-dropdown {
+    display: none;
+    position: static;
+    transform: none;
+    min-width: 100%;
+    box-shadow: none;
+    border-top: none;
+    background: rgba(255,255,255,.05);
+    padding-top: 0;
+  }
+  .nav-item.open > .nav-dropdown { display: block; }
+  .nav-dropdown a { padding-left: 4rem; }
   .navigation_logo { display: none; }
 
   .hero__title { font-size: 4rem; letter-spacing: .1em; }

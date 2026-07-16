@@ -49,9 +49,37 @@
   window.addEventListener("scroll", function () {
     document.getElementById("main-nav").classList.toggle("sticky", window.scrollY > 100);
   });
-  document.getElementById("nav-toggle").addEventListener("click", function () {
-    var links = document.getElementById("nav-links");
-    var open = links.classList.toggle("open");
+
+  var toggle = document.getElementById("nav-toggle");
+  var navLinks = document.getElementById("nav-links");
+
+  toggle.addEventListener("click", function () {
+    var open = navLinks.classList.toggle("open");
     this.setAttribute("aria-expanded", open);
+  });
+
+  // Mobile: tap on nav-item link toggles its dropdown
+  navLinks.querySelectorAll(".nav-item > .navigation_link").forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      if (window.innerWidth <= 900) {
+        var item = this.closest(".nav-item");
+        var dropdown = item.querySelector(".nav-dropdown");
+        if (dropdown) {
+          e.preventDefault();
+          item.classList.toggle("open");
+        }
+      }
+    });
+  });
+
+  // Close nav when a dropdown link is clicked on mobile
+  navLinks.querySelectorAll(".nav-dropdown a").forEach(function (a) {
+    a.addEventListener("click", function () {
+      if (window.innerWidth <= 900) {
+        navLinks.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+        navLinks.querySelectorAll(".nav-item.open").forEach(function (i) { i.classList.remove("open"); });
+      }
+    });
   });
 </script>

@@ -83,7 +83,7 @@ collections:
     files:
       - name: membership
         label: "Členstvo — tiers a podmienky"
-        file: src/content/membership.yaml
+        file: src/_data/membership.yaml
         editor:
           preview: false
         fields:
@@ -119,7 +119,7 @@ collections:
     files:
       - name: pricing
         label: "Cenník 2026"
-        file: src/content/pricing.yaml
+        file: src/_data/pricing.yaml
         editor:
           preview: false
         fields:
@@ -157,7 +157,7 @@ collections:
     files:
       - name: hole_in_one
         label: "Hole-in-One, Eagle, Albatros"
-        file: src/content/hole-in-one.yaml
+        file: src/_data/hole_in_one.yaml
         editor:
           preview: false
         fields:
@@ -201,7 +201,7 @@ collections:
     files:
       - name: club_champions
         label: "História majstrov"
-        file: src/content/club-champions.yaml
+        file: src/_data/club_champions.yaml
         editor:
           preview: false
         fields:
@@ -230,7 +230,7 @@ collections:
     files:
       - name: external_trainers
         label: "Zoznam externých trénerov"
-        file: src/content/external-trainers.yaml
+        file: src/_data/external_trainers.yaml
         editor:
           preview: false
         fields:

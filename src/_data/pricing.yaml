@@ -1,0 +1,34 @@
+season_start: "1. apríla 2026"
+season_end: "30. októbra 2026"
+open_hours_note: "Areál je otvorený NON-STOP. Drajving je pondelky (okrem sviatkov) do 15:00 zatvorený. Mimo hlavnej sezóny sledujte semafor na www.golfnitra.sk."
+off_season_note: "Mimo otváracej doby recepcie strpte prípadnú techniku na ihrisku. Kamerový systém registruje všetkých návštevníkov — SAMOOBSLUHA."
+
+reception_hours:
+  - day: "Pondelok, Utorok"
+    hours: "Zatvorená (okrem sviatkov)"
+  - day: "Streda – Piatok"
+    hours: "16:00 – 19:00"
+  - day: "Víkendy a sviatky"
+    hours: "10:00 – 19:00"
+
+green_fees:
+  - item: "9 jamiek"
+    price: "18,- EUR"
+  - item: "18 jamiek"
+    price: "30,- EUR"
+  - item: "Drajving (per basket)"
+    price: "2,- EUR"
+
+vouchers:
+  - item: "5× 9 jamiek (voučer)"
+    price: "60,- EUR"
+  - item: "5× 18 jamiek (voučer)"
+    price: "110,- EUR"
+
+payment_methods:
+  - "QR kód pri recepcii (internet banking)"
+  - "Prevod na účet: GM-Golf s.r.o., Tatra banka, č.ú. 29 26 86 57 60/1100"
+  - "Kupóny zakúpené vopred (vhodenie do kasičky)"
+  - "Platobný terminál počas otváracích hodín recepcie"
+
+qr_image: "https://static.wixstatic.com/media/4b8c0e_7791daefcb2d4803a93924bde9e81c97~mv2.jpg"

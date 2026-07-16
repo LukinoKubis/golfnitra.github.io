@@ -1,0 +1,92 @@
+years:
+  - year: 2024
+    tournaments:
+      - name: "Majstrovstvá GK Meander na rany"
+        date: "16.–17.8.2024"
+        results:
+          - category: "Majsterka GKM"
+            winner: "Adriana Melničáková"
+          - category: "Majster GKM"
+            winner: "Rastislav Melničák"
+      - name: "KARTOMA s.r.o. Majstrovstvá GK Meander na rany"
+        date: "31.8.–1.9.2024"
+        results:
+          - category: "Majsterka GKM"
+            winner: "Svetlana Zelenajová"
+          - category: "Majster GKM"
+            winner: "Ronald Kvaššay"
+
+  - year: 2023
+    tournaments:
+      - name: "KARTOMA s.r.o. Majstrovstvá GK Meander na rany"
+        date: "19.–20.8.2023"
+        results:
+          - category: "Majsterka GKM"
+            winner: "Svetlana Zelenajová"
+          - category: "Majster GKM"
+            winner: "Ronald Kaššay"
+
+  - year: 2022
+    tournaments:
+      - name: "KARTOMA s.r.o. Majstrovstvá GK Meander na rany"
+        date: "13.–14.8.2022"
+        results:
+          - category: "Majsterka GKM"
+            winner: "Svetlana Zelenajová"
+          - category: "Majster GKM"
+            winner: "Mário Letko"
+
+  - year: 2021
+    tournaments:
+      - name: "KARTOMA s.r.o. Majstrovstvá GK Meander na rany"
+        date: "21.–22.8.2021"
+        results:
+          - category: "Majsterka GKM"
+            winner: "Svetlana Zelenajová"
+            score: "87+84=171 rán"
+          - category: "Vicemajsterka GKM"
+            winner: "Adriana Melničáková"
+            score: "89+87=176 rán"
+          - category: "Majster GKM"
+            winner: "Mário Letko"
+            score: "69+71=140 rán"
+          - category: "Vicemajster GKM"
+            winner: "Alexej Zelenaj"
+            score: "72+73=145 rán"
+
+  - year: 2020
+    tournaments:
+      - name: "Turnaj o Majstra a Majsterku GK Meander v hre na rany"
+        date: "16.8.2020"
+        results:
+          - category: "Majster GK MEANDER 2020"
+            winner: "Milan Filka"
+          - category: "Majsterka GK MEANDER 2020"
+            winner: "Kristína Beťková"
+
+  - year: 2019
+    tournaments:
+      - name: "Majstrovstvá v hre na rany"
+        results:
+          - category: "Majsterka GKM — Dámy"
+            winner: "Adriana Melničáková"
+          - category: "Majster GKM — Muži"
+            winner: "Milan Filka"
+      - name: "Majstrovstvá v hre na jamky"
+        results:
+          - category: "Majster klubu v hre na jamky"
+            winner: "Peter Zajác"
+          - category: "2. miesto"
+            winner: "Milan Filka"
+          - category: "3. miesto"
+            winner: "Ivan Medovič"
+
+  - year: 2018
+    tournaments:
+      - name: "Turnaj o Majstra a Majsterku GK Meander v hre na rany"
+        date: "30.9.2018"
+        results:
+          - category: "Majster GK MEANDER 2018"
+            winner: "Vincent Kostolány"
+          - category: "Majsterka GK MEANDER 2018"
+            winner: "Darinka Púčaťová"

@@ -1,0 +1,57 @@
+<nav class="navigation" id="main-nav">
+  <button class="nav-toggle" id="nav-toggle" aria-label="Otvoriť menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="nav-links" id="nav-links">
+    <a href="/" class="navigation_link{% if page.url == '/' %} active{% endif %}">Domov</a>
+
+    <div class="nav-item">
+      <a href="/golfove-ihrisko/" class="navigation_link{% if '/golfove-ihrisko' in page.url %} active{% endif %}">Ihrisko</a>
+      <ul class="nav-dropdown">
+        <li><a href="/golfove-ihrisko/green-meadows/">Green Meadows</a></li>
+        <li><a href="/golfove-ihrisko/green-park/">Green Park</a></li>
+        <li><a href="/golfove-ihrisko/samoobsluha/">Samoobsluha a QR</a></li>
+        <li><a href="/golfove-ihrisko/hole-in-one/">Hole in One &amp; Eagle</a></li>
+        <li><a href="/golfove-ihrisko/galeria/">Galéria</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-item">
+      <a href="/gk-meander/" class="navigation_link{% if '/gk-meander' in page.url %} active{% endif %}">GK Meander</a>
+      <ul class="nav-dropdown">
+        <li><a href="/gk-meander/">Členstvo</a></li>
+        <li><a href="/gk-meander/majstri-klubu/">Majstri klubu</a></li>
+      </ul>
+    </div>
+
+    <a href="/" class="navigation_logo">
+      <img src="/img/logo-white.png" alt="Green Meadows — Golfový klub Meander" class="logo">
+    </a>
+
+    <a href="/cennik/" class="navigation_link{% if '/cennik' in page.url %} active{% endif %}">Cenník 2026</a>
+
+    <div class="nav-item">
+      <a href="/info-blok/" class="navigation_link{% if '/info-blok' in page.url %} active{% endif %}">Info-blok</a>
+      <ul class="nav-dropdown">
+        {% for item in collections.pages %}
+        <li><a href="{{ item.data.permalink }}">{{ item.data.title }}</a></li>
+        {% endfor %}
+        <li><a href="https://booking.reservanto.sk/form/?id=4271" target="_blank" rel="noopener">Rezervácia tréningu ↗</a></li>
+      </ul>
+    </div>
+
+    <a href="/kontakt/" class="navigation_link{% if '/kontakt' in page.url %} active{% endif %}">Kontakt</a>
+  </div>
+</nav>
+
+<script>
+  window.addEventListener("scroll", function () {
+    document.getElementById("main-nav").classList.toggle("sticky", window.scrollY > 100);
+  });
+  document.getElementById("nav-toggle").addEventListener("click", function () {
+    var links = document.getElementById("nav-links");
+    var open = links.classList.toggle("open");
+    this.setAttribute("aria-expanded", open);
+  });
+</script>

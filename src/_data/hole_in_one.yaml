@@ -1,0 +1,141 @@
+note: "Zapisujú sa len výsledky ak hráč má minimálne jedného spoluhráča na preukázanie výsledku."
+
+hole_in_one_nesuazny:
+  - date: "12.10.2025"
+    player: "Roman Pavlík"
+    hole: 9
+    distance: "110 m"
+  - date: "19.08.2025"
+    player: "Ninka Vargová"
+    hole: 9
+    distance: "110 m"
+  - date: "27.01.2025"
+    player: "Kristínka Divincová"
+    hole: 9
+    distance: "110 m"
+  - date: "02.06.2022"
+    player: "Ľubomír Benko"
+    hole: 1
+    distance: "163 m"
+  - date: "01.08.2018"
+    player: "Ľubomír Benko"
+    hole: 9
+    distance: "110 m"
+  - date: "23.07.2014"
+    player: "Nina Barnes"
+    hole: 9
+    distance: "103 m"
+  - date: "21.10.2013"
+    player: "J. Ivančík"
+    hole: 9
+    distance: "103 m"
+  - date: "19.10.2013"
+    player: "P. Zajác"
+    hole: "3 (akadémia)"
+    distance: "81 m"
+  - date: "18.04.2013"
+    player: "J. Ivančík"
+    hole: "3 (akadémia)"
+    distance: "92 m"
+  - date: "01.10.2012"
+    player: "H. Lam Duc"
+    hole: "2 (akadémia)"
+    distance: "61 m"
+  - date: "04.04.2012"
+    player: "J. Janus"
+    hole: "L9 (akadémia)"
+    distance: "92 m"
+
+hole_in_one_suazny: []
+
+eagle:
+  - date: "02.05.2026"
+    player: "Maroš Černák"
+    hole: 2
+    note: ""
+  - date: "09.09.2025"
+    player: "Pavol Kubis"
+    hole: 2
+    note: ""
+  - date: "28.06.2023"
+    player: "Maroš Černák"
+    hole: 2
+    note: "spoluhráči: Ondrík, Luben, Rado"
+  - date: "06.11.2021"
+    player: "Igor Taraba"
+    hole: 2
+    note: "A.Z."
+  - date: "31.10.2021"
+    player: "Ladislav Sailer"
+    hole: 3
+    note: "spoluhráč V. Čerešňa"
+  - date: "18.08.2021"
+    player: "Mário Letko"
+    hole: 2
+    note: ""
+  - date: "07.04.2021"
+    player: "Dominik Mračko"
+    hole: 2
+    note: "PAR 5, spoluhráči P. Jelička a M. Letko"
+  - date: "10.09.2020"
+    player: "Alexej Zelenaj"
+    hole: 2
+    note: "PAR 5"
+  - date: "25.08.2020"
+    player: "Alexej Zelenaj"
+    hole: 2
+    note: "PAR 5"
+  - date: "12.06.2018"
+    player: "Anton Zelenaj"
+    hole: 2
+    note: "PAR 5"
+  - date: "04.08.2017"
+    player: "Mário Letko"
+    hole: "2 (11. jamka)"
+    note: "PAR 5"
+  - date: "14.07.2017"
+    player: "Mário Letko"
+    hole: "2 (11. jamka)"
+    note: "PAR 5"
+  - date: "18.06.2017"
+    player: "Juraj Bernáth"
+    hole: 2
+    note: "PAR 5"
+  - date: "17.04.2016"
+    player: "Jozef Michrina"
+    hole: 6
+    note: "PAR 4"
+  - date: "08.11.2015"
+    player: "Mário Letko"
+    hole: 2
+    note: "PAR 5"
+  - date: "01.08.2015"
+    player: "Rastislav Melničák"
+    hole: 2
+    note: "PAR 5"
+  - date: "26.07.2015"
+    player: "Sebastián Slezák"
+    hole: 2
+    note: "PAR 5"
+  - date: "13.06.2015"
+    player: "Peter Zajac"
+    hole: 3
+    note: "PAR 4"
+  - date: "02.05.2015"
+    player: "Carolina Cordieri"
+    hole: 2
+    note: "PAR 5"
+  - date: "10.05.2015"
+    player: "Mário Letko"
+    hole: 2
+    note: "PAR 5"
+  - date: "18.04.2015"
+    player: "Anton Zelenaj"
+    hole: 2
+    note: "PAR 5"
+  - date: "10.10.2014"
+    player: "Mário Letko"
+    hole: 7
+    note: "PAR 4"
+
+albatros: []

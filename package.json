@@ -1,0 +1,13 @@
+{
+  "name": "golfnitra",
+  "version": "1.0.0",
+  "description": "Golfový klub MEANDER / Green Meadows & Green Park — static site",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve",
+    "debug": "DEBUG=Eleventy* eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

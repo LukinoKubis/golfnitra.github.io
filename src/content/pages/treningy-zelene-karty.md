@@ -64,4 +64,4 @@ Cena zahŕňa aj potrebné množstvo drajvingových loptičiek.
 - Pred tréningom sa rozcvičte — využijete tým efektívnejšie čas tréningu.
 - Vo výnimočných prípadoch je možné dohodnúť tréning mimo časov v rezervačnom systéme.
 
-[Rezervovať tréning →](https://booking.reservanto.sk/form/?id=4271){.btn .btn--green}
+[Rezervovať tréning →](/rezervacia/){.btn .btn--green}

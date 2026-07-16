@@ -131,7 +131,7 @@ ul { list-style: none; }
 .nav-dropdown {
   display: none;
   position: absolute;
-  top: calc(100% + .5rem);
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(1, 40, 22, .97);
@@ -140,6 +140,7 @@ ul { list-style: none; }
   border-top: .3rem solid var(--green-accent);
   z-index: 200;
   box-shadow: var(--shadow-lg);
+  padding-top: .5rem;
 }
 
 .nav-dropdown li { display: block; }

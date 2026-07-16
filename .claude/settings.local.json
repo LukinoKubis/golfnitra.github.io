@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c ' *)",
+      "Bash(python3 *)",
+      "Bash(npm --version)",
+      "Bash(npm install *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(npm run *)",
+      "Bash(npm start *)",
+      "Skill(update-config)",
+      "WebFetch(domain:www.golfnitra.sk)",
+      "WebSearch",
+      "WebFetch(domain:www.golfbook.io)",
+      "WebFetch(domain:maps.app.goo.gl)"
+    ]
+  }
+}

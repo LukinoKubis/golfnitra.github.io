@@ -9,10 +9,19 @@ layout: layouts/page.njk
 
 Profesionálny servis golfových palíc priamo v areáli. Pracujeme aj s Vami prineseným materiálom.
 
-<div class="service-rewards">
-  <p><strong>Pri sume servisných prác nad 100,- EUR:</strong> poukaz na celodenný vstup na tréningové plochy + jedna hra 18-jamiek</p>
-  <p><strong>Pri sume servisných prác od 50,- do 99,- EUR:</strong> celodenný vstup na tréningové plochy + jedna hra 9-jamiek</p>
-  <p><em>Zľavu nie je možné odpočítať od ceny servisných prác. Poukaz je prenosný na tretiu osobu a musí byť vyčerpaný v danom roku.</em></p>
+<div class="bonus-box">
+  <div class="bonus-box__title">Bonus za servis (platný od 1.3.2025)</div>
+  <div class="bonus-box__items">
+    <div class="bonus-item">
+      <span class="bonus-item__threshold">nad 100,- EUR</span>
+      <span>Celodenný vstup na tréningové plochy + jedna hra 18-jamiek</span>
+    </div>
+    <div class="bonus-item">
+      <span class="bonus-item__threshold">50,- – 99,- EUR</span>
+      <span>Celodenný vstup na tréningové plochy + jedna hra 9-jamiek</span>
+    </div>
+  </div>
+  <p style="font-size:1.35rem;color:var(--text-muted);margin-top:1.5rem;"><em>Zľavu nie je možné odpočítať od ceny servisných prác. Poukaz je prenosný na tretiu osobu a musí byť vyčerpaný v danom roku.</em></p>
 </div>
 
 ## Cenník servisu (platný od 1.3.2025)

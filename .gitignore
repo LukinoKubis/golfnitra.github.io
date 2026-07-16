@@ -1,3 +1,4 @@
 content-reference/
 node_modules/
 _site/
+.claude/

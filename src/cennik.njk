@@ -3,92 +3,102 @@ layout: layouts/base.njk
 title: "Cenník 2026"
 permalink: /cennik/
 ---
-<header class="header header--inner">
-  <div class="text-box">
-    <h1 class="heading-primary">
-      <span class="heading-primary-main">Cenník 2026</span>
-    </h1>
+<section class="hero hero--inner">
+  <div class="hero__bg"></div>
+  <div class="hero__content">
+    <p class="hero__eyebrow">Sezóna {{ pricing.season_start }} – {{ pricing.season_end }}</p>
+    <h1 class="hero__title">Cenník 2026</h1>
   </div>
-</header>
+</section>
 
-<div class="page-content">
-  <h1>Cenník 2026</h1>
+<section class="section">
+  <div class="container--sm">
+    <div class="notice">
+      <strong>Hlavná sezóna:</strong> {{ pricing.season_start }} – {{ pricing.season_end }}<br>
+      {{ pricing.open_hours_note }}
+    </div>
 
-  <p>
-    <strong>Hlavná sezóna:</strong> {{ pricing.season_start }} – {{ pricing.season_end }}<br>
-    {{ pricing.open_hours_note }}
-  </p>
+    <div class="pricing-section">
+      <div class="pricing-section__title">Otváracie hodiny recepcie</div>
+      <table class="pricing-table">
+        <thead><tr><th>Deň</th><th>Hodiny</th></tr></thead>
+        <tbody>
+          {% for h in pricing.reception_hours %}
+          <tr><td>{{ h.day }}</td><td>{{ h.hours }}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <p style="font-size:1.4rem;color:var(--text-muted);margin-top:1rem;">{{ pricing.off_season_note }}</p>
+    </div>
 
-  <div class="pricing-section">
-    <div class="pricing-section__title">Otváracie hodiny recepcie</div>
-    <table class="pricing-table">
-      <thead><tr><th>Deň</th><th>Hodiny</th></tr></thead>
-      <tbody>
-        {% for h in pricing.reception_hours %}
-        <tr><td>{{ h.day }}</td><td>{{ h.hours }}</td></tr>
+    <div class="pricing-section">
+      <div class="pricing-section__title">Green Fee</div>
+      <table class="pricing-table">
+        <thead><tr><th>Typ hry</th><th>Cena</th></tr></thead>
+        <tbody>
+          {% for item in pricing.green_fees %}
+          <tr><td>{{ item.item }}</td><td class="price">{{ item.price }}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pricing-section">
+      <div class="pricing-section__title">Voučery</div>
+      <table class="pricing-table">
+        <thead><tr><th>Voučer</th><th>Cena</th></tr></thead>
+        <tbody>
+          {% for v in pricing.vouchers %}
+          <tr><td>{{ v.item }}</td><td class="price">{{ v.price }}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <p style="font-size:1.4rem;color:var(--text-mid);margin-top:1rem;">
+        Voučery je možné zakúpiť počas otváracích hodín recepcie.
+      </p>
+    </div>
+
+    <div class="pricing-section">
+      <div class="pricing-section__title">Spôsoby platby</div>
+      <ul class="page-body" style="padding:0;">
+        {% for m in pricing.payment_methods %}
+        <li>{{ m }}</li>
         {% endfor %}
-      </tbody>
-    </table>
-    <p style="font-size:1.4rem;color:#888;margin-top:1rem;">{{ pricing.off_season_note }}</p>
-  </div>
+      </ul>
+    </div>
 
-  <div class="pricing-section">
-    <div class="pricing-section__title">Green Fee</div>
-    <table class="pricing-table">
-      <thead><tr><th>Typ hry</th><th>Cena</th></tr></thead>
-      <tbody>
-        {% for item in pricing.green_fees %}
-        <tr><td>{{ item.item }}</td><td>{{ item.price }}</td></tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
+    <div class="qr-layout">
+      <img
+        src="{{ pricing.qr_image }}"
+        alt="QR kód — 18 EUR / 9 jamiek 2026"
+        class="qr-img"
+        loading="lazy"
+      >
+      <div>
+        <h3 style="font-size:1.8rem;font-weight:900;color:var(--green-deep);margin-bottom:1rem;">QR kód pre internet banking</h3>
+        <p style="font-size:1.6rem;color:var(--text-mid);line-height:1.8;margin-bottom:1.5rem;">
+          Naskenujte kód pred hrou a uhraďte green fee 18,- EUR / 9 jamiek priamo cez svoju bankovú appku.
+        </p>
+        <p style="font-size:1.4rem;color:var(--text-mid);">
+          Platobný účet prevádzky ihriska:<br>
+          <strong>GM-Golf s.r.o.</strong><br>
+          Tatra banka — č.ú. {{ site.bank_prevadzka }}
+        </p>
+      </div>
+    </div>
 
-  <div class="pricing-section">
-    <div class="pricing-section__title">Voučery</div>
-    <table class="pricing-table">
-      <thead><tr><th>Voučer</th><th>Cena</th></tr></thead>
-      <tbody>
-        {% for v in pricing.vouchers %}
-        <tr><td>{{ v.item }}</td><td>{{ v.price }}</td></tr>
-        {% endfor %}
-      </tbody>
-    </table>
-    <p style="font-size:1.4rem;color:#555;margin-top:1rem;">
-      Voučery je možné zakúpiť počas otváracích hodín recepcie.
-    </p>
-  </div>
+    <div class="pricing-section">
+      <div class="pricing-section__title">Členské príspevky</div>
+      <p style="font-size:1.6rem;color:var(--text-mid);">
+        Podrobnosti o členských príspevkoch a výhodách nájdete na stránke <a href="/gk-meander/" style="color:var(--green-accent);">GK Meander</a>.
+      </p>
+    </div>
 
-  <div class="pricing-section">
-    <div class="pricing-section__title">Spôsoby platby</div>
-    <ul>
-      {% for m in pricing.payment_methods %}
-      <li>{{ m }}</li>
-      {% endfor %}
-    </ul>
-  </div>
-
-  <div class="qr-block mt-4">
-    <img
-      src="{{ pricing.qr_image }}"
-      alt="QR kód — 18 EUR / 9 jamiek 2026"
-      class="qr-block__img"
-      loading="lazy"
-    >
-    <div>
-      <p><strong>QR kód pre internet banking</strong></p>
-      <p>Naskenujte kód pred hrou a uhraďte green fee 18,- EUR / 9 jamiek priamo cez svoju bankovú appku.</p>
-      <p style="margin-top:1rem;font-size:1.4rem;color:#555;">
-        Platobný účet prevádzky ihriska:<br>
-        <strong>GM-Golf s.r.o.</strong><br>
-        Tatra banka — č.ú. {{ site.bank_prevadzka }}
+    <div class="pricing-section">
+      <div class="pricing-section__title">Tréningy a zelené karty</div>
+      <p style="font-size:1.6rem;color:var(--text-mid);">
+        Ceny tréningov a kurzov nájdete na stránke <a href="/info-blok/treningy-zelene-karty/" style="color:var(--green-accent);">Tréningy a zelené karty</a>.
       </p>
     </div>
   </div>
-
-  <h2 class="mt-4">Členské príspevky</h2>
-  <p>Podrobnosti o členských príspevkoch a výhodách nájdete na stránke <a href="/gk-meander/">GK Meander</a>.</p>
-
-  <h2>Tréningy a zelené karty</h2>
-  <p>Ceny tréningov a kurzov nájdete na stránke <a href="/info-blok/treningy-zelene-karty/">Tréningy a zelené karty</a>.</p>
-</div>
+</section>

@@ -1,41 +1,59 @@
 <footer class="footer">
-  <div class="footer__inner">
-    <div>
-      <div class="footer__title">Golfové ihrisko</div>
+  <div class="footer__grid container">
+    <div class="footer__brand">
+      <img src="/img/logo-white.png" alt="Green Meadows Golf" class="footer__logo">
+      <p class="footer__brand-text">
+        Golfové ihrisko GREEN MEADOWS &amp; GREEN PARK<br>
+        Ivanka pri Nitre — NO TEETIME NO STRESS
+      </p>
+      <div class="footer__socials" style="margin-top:2rem;">
+        <a href="{{ site.facebook }}" target="_blank" rel="noopener">Facebook</a>
+        <a href="{{ site.youtube }}" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </div>
+
+    <div class="footer__contact">
+      <div class="footer__col-title">Kontakt</div>
       <p>
-        GREEN MEADOWS &amp; GREEN PARK<br>
         Ábelova ul., 951 12 Ivanka pri Nitre<br>
-        <a href="tel:+421905200142">+421 905 200 142</a><br>
+        <a href="tel:{{ site.phone }}">{{ site.phone }}</a><br>
         <a href="mailto:{{ site.email }}">{{ site.email }}</a>
       </p>
-    </div>
-    <div>
-      <div class="footer__title">Golfový klub MEANDER o.z.</div>
-      <p>
-        Na stanicu 28, 951 12 Ivanka pri Nitre<br>
+      <p style="margin-top:1.5rem;">
+        <strong style="color:rgba(255,255,255,.65);">GK Meander o.z.</strong><br>
         IČO: {{ site.ico_klub }}<br>
-        IBAN: {{ site.iban }}<br>
-        <a href="{{ site.facebook }}" target="_blank" rel="noopener">Facebook</a>
-        &nbsp;·&nbsp;
-        <a href="{{ site.youtube }}" target="_blank" rel="noopener">YouTube</a>
+        IBAN: {{ site.iban }}
       </p>
     </div>
+
     <div>
-      <div class="footer__title">Rýchle odkazy</div>
-      <p>
-        <a href="/cennik/">Cenník 2026</a><br>
-        <a href="/gk-meander/">Členstvo</a><br>
-        <a href="/info-blok/treningy-zelene-karty/">Tréningy a zelené karty</a><br>
-        <a href="https://booking.reservanto.sk/form/?id=4271" target="_blank" rel="noopener">Rezervácia tréningu</a><br>
-        <a href="/kontakt/">Kontakt</a>
-      </p>
+      <div class="footer__col-title">Rýchle odkazy</div>
+      <ul class="footer__links">
+        <li><a href="/cennik/">Cenník 2026</a></li>
+        <li><a href="/gk-meander/">Členstvo</a></li>
+        <li><a href="/golfove-ihrisko/">Ihrisko</a></li>
+        <li><a href="/info-blok/treningy-zelene-karty/">Tréningy</a></li>
+        <li><a href="/golfove-ihrisko/hole-in-one/">Hole in One &amp; Eagle</a></li>
+        <li><a href="/gk-meander/majstri-klubu/">Majstri klubu</a></li>
+        <li><a href="/kontakt/">Kontakt</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="footer__col-title">Partneri</div>
+      <ul class="footer__links">
+        <li><a href="https://booking.reservanto.sk/form/?id=4271" target="_blank" rel="noopener">Rezervácia tréningu ↗</a></li>
+        <li><a href="https://www.kartoma.sk" target="_blank" rel="noopener">Kartoma ↗</a></li>
+        <li><a href="https://www.skg.sk" target="_blank" rel="noopener">SKG ↗</a></li>
+        <li><a href="https://www.pgacz.com" target="_blank" rel="noopener">PGA of Czech Republic ↗</a></li>
+      </ul>
     </div>
   </div>
-  <div class="footer__bottom">
-    <span>© {{ site.year }} {{ site.club_name }}. Všetky práva vyhradené.</span>
-    <span>
-      Hlavný partner:
-      <a href="https://www.kartoma.sk" target="_blank" rel="noopener">Kartoma</a>
+
+  <div class="footer__bottom container">
+    <span class="footer__copy">© {{ site.club_name }}</span>
+    <span class="footer__partner">
+      Hlavný partner: <a href="https://www.kartoma.sk" target="_blank" rel="noopener">Kartoma</a>
     </span>
   </div>
 </footer>

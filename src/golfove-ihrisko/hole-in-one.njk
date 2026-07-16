@@ -3,94 +3,95 @@ layout: layouts/base.njk
 title: "Hole in One & Eagle"
 permalink: /golfove-ihrisko/hole-in-one/
 ---
-<header class="header header--inner">
-  <div class="text-box">
-    <h1 class="heading-primary">
-      <span class="heading-primary-main">Hole in One</span>
-      <span class="heading-primary-sub">Eagle &amp; Albatros</span>
-    </h1>
+<section class="hero hero--inner">
+  <div class="hero__bg"></div>
+  <div class="hero__content">
+    <p class="hero__eyebrow">Naše ihrisko</p>
+    <h1 class="hero__title">Hole in One</h1>
+    <p class="hero__sub">Eagle &amp; Albatros</p>
   </div>
-</header>
+</section>
 
-<div class="page-content">
-  <h1>Hole-in-One, Eagle, Albatros zahrané na Našom ihrisku</h1>
-  <p style="font-size:1.4rem;color:#888;margin-bottom:3rem;">{{ hole_in_one.note }}</p>
+<section class="section">
+  <div class="container--sm">
+    <div class="section-header">
+      <span class="section-label">Rekordy</span>
+      <h2 class="section-title">Hole-in-One, Eagle, Albatros</h2>
+      <p class="section-sub">{{ hole_in_one.note }}</p>
+    </div>
 
-  <div class="records-section">
-    <h2>Nesúťažný Hole-in-One</h2>
-    <table class="records-table">
-      <thead>
-        <tr>
-          <th>Dátum</th>
-          <th>Hráč/-ka</th>
-          <th>Jamka</th>
-          <th>Vzdialenosť</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for r in hole_in_one.hole_in_one_nesuazny %}
-        <tr>
-          <td>{{ r.date }}</td>
-          <td>{{ r.player }}</td>
-          <td>{{ r.hole }}</td>
-          <td>{{ r.distance }}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+    <div class="records-section">
+      <div class="records-section__title">Nesúťažný Hole-in-One</div>
+      <table class="pricing-table">
+        <thead>
+          <tr><th>Dátum</th><th>Hráč/-ka</th><th>Jamka</th><th>Vzdialenosť</th></tr>
+        </thead>
+        <tbody>
+          {% for r in hole_in_one.hole_in_one_nesuazny %}
+          <tr>
+            <td>{{ r.date }}</td>
+            <td>{{ r.player }}</td>
+            <td>{{ r.hole }}</td>
+            <td>{{ r.distance }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
 
-    <h2>Súťažný Hole-in-One</h2>
-    {% if hole_in_one.hole_in_one_suazny | length %}
-    <table class="records-table">
-      <thead>
-        <tr><th>Dátum</th><th>Hráč/-ka</th><th>Jamka</th><th>Vzdialenosť</th></tr>
-      </thead>
-      <tbody>
-        {% for r in hole_in_one.hole_in_one_suazny %}
-        <tr><td>{{ r.date }}</td><td>{{ r.player }}</td><td>{{ r.hole }}</td><td>{{ r.distance }}</td></tr>
-        {% endfor %}
-      </tbody>
-    </table>
-    {% else %}
-    <p style="color:#888;font-size:1.5rem;">(bez zaznamenaných výsledkov)</p>
-    {% endif %}
+    <div class="records-section">
+      <div class="records-section__title">Súťažný Hole-in-One</div>
+      {% if hole_in_one.hole_in_one_suazny | length %}
+      <table class="pricing-table">
+        <thead>
+          <tr><th>Dátum</th><th>Hráč/-ka</th><th>Jamka</th><th>Vzdialenosť</th></tr>
+        </thead>
+        <tbody>
+          {% for r in hole_in_one.hole_in_one_suazny %}
+          <tr><td>{{ r.date }}</td><td>{{ r.player }}</td><td>{{ r.hole }}</td><td>{{ r.distance }}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <p style="color:var(--text-muted);font-size:1.5rem;">(bez zaznamenaných výsledkov)</p>
+      {% endif %}
+    </div>
 
-    <h2>Eagle</h2>
-    <table class="records-table">
-      <thead>
-        <tr>
-          <th>Dátum</th>
-          <th>Hráč/-ka</th>
-          <th>Jamka</th>
-          <th>Poznámka</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for r in hole_in_one.eagle %}
-        <tr>
-          <td>{{ r.date }}</td>
-          <td>{{ r.player }}</td>
-          <td>{{ r.hole }}</td>
-          <td>{{ r.note }}</td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
+    <div class="records-section">
+      <div class="records-section__title">Eagle</div>
+      <table class="pricing-table">
+        <thead>
+          <tr><th>Dátum</th><th>Hráč/-ka</th><th>Jamka</th><th>Poznámka</th></tr>
+        </thead>
+        <tbody>
+          {% for r in hole_in_one.eagle %}
+          <tr>
+            <td>{{ r.date }}</td>
+            <td>{{ r.player }}</td>
+            <td>{{ r.hole }}</td>
+            <td>{{ r.note }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
 
-    <h2>Albatros</h2>
-    {% if hole_in_one.albatros | length %}
-    <table class="records-table">
-      <thead>
-        <tr><th>Dátum</th><th>Hráč/-ka</th><th>Jamka</th><th>Poznámka</th></tr>
-      </thead>
-      <tbody>
-        {% for r in hole_in_one.albatros %}
-        <tr><td>{{ r.date }}</td><td>{{ r.player }}</td><td>{{ r.hole }}</td><td>{{ r.note }}</td></tr>
-        {% endfor %}
-      </tbody>
-    </table>
-    {% else %}
-    <p style="color:#888;font-size:1.5rem;">(žiadny záznam)</p>
-    {% endif %}
+    <div class="records-section">
+      <div class="records-section__title">Albatros</div>
+      {% if hole_in_one.albatros | length %}
+      <table class="pricing-table">
+        <thead>
+          <tr><th>Dátum</th><th>Hráč/-ka</th><th>Jamka</th><th>Poznámka</th></tr>
+        </thead>
+        <tbody>
+          {% for r in hole_in_one.albatros %}
+          <tr><td>{{ r.date }}</td><td>{{ r.player }}</td><td>{{ r.hole }}</td><td>{{ r.note }}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <p style="color:var(--text-muted);font-size:1.5rem;">(žiadny záznam)</p>
+      {% endif %}
+    </div>
   </div>
-</div>
+</section>

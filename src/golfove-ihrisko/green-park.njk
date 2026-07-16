@@ -8,35 +8,45 @@ permalink: /golfove-ihrisko/green-park/
   {% if c.data.slug == "green-park" %}{% set course = c %}{% endif %}
 {% endfor %}
 
-<header class="header header--inner header--gp">
-  <div class="text-box">
-    <h1 class="heading-primary">
-      <span class="heading-primary-main">Green Park</span>
-      <span class="heading-primary-sub">9-jamkové ihrisko</span>
-    </h1>
+<section class="hero hero--inner hero--gp">
+  <div class="hero__bg"></div>
+  <div class="hero__content">
+    <p class="hero__eyebrow">9-jamkové ihrisko</p>
+    <h1 class="hero__title">Green Park</h1>
   </div>
-</header>
+</section>
 
-<div class="page-content">
-  <p style="background:#f0fff8;border-left:.4rem solid #28b485;padding:1.2rem 2rem;font-size:1.5rem;color:#015C39;margin-bottom:3rem;">
-    <strong>2026:</strong> Ihriská GREEN MEADOWS a GREEN PARK sa striedajú — sledujte značenie pri vstupe do areálu.
-  </p>
+<section class="section">
+  <div class="container--sm">
+    <div class="notice">
+      <strong>2026:</strong> Ihriská GREEN MEADOWS a GREEN PARK sa striedajú — sledujte značenie pri vstupe do areálu.
+    </div>
 
-  {% if course %}
-  <h2>Vybavenie ihriska</h2>
-  <ul>
-    {% for f in course.data.features %}
-    <li>{{ f }}</li>
-    {% endfor %}
-  </ul>
+    {% if course %}
+    <div class="section-header">
+      <span class="section-label">Parametre</span>
+      <h2 class="section-title">Vybavenie ihriska</h2>
+    </div>
 
-  <h2>Mapa ihriska</h2>
-  <img src="{{ course.data.course_map }}" alt="Mapa 9-jamkového ihriska Green Park 2026" style="max-width:100%;height:auto;border:0.1rem solid #e5e5e5;" loading="lazy">
+    <ul class="page-body" style="padding:0;">
+      {% for f in course.data.features %}
+      <li>{{ f }}</li>
+      {% endfor %}
+    </ul>
 
-  <div style="margin-top:2rem;">
-    {{ course.templateContent | safe }}
+    <div class="section-header" style="margin-top:5rem;">
+      <h2 class="section-title">Mapa ihriska</h2>
+    </div>
+    <img src="{{ course.data.course_map }}" alt="Mapa 9-jamkového ihriska Green Park 2026" style="max-width:100%;height:auto;border:.1rem solid var(--border);" loading="lazy">
+
+    <div class="page-body" style="margin-top:3rem;">
+      {{ course.templateContent | safe }}
+    </div>
+    {% endif %}
+
+    <p style="margin-top:4rem;">
+      <a href="/cennik/" class="btn btn--green">Zobraziť cenník →</a>
+      <a href="/golfove-ihrisko/green-meadows/" class="btn btn--outline-green" style="margin-left:1.5rem;">Green Meadows →</a>
+    </p>
   </div>
-  {% endif %}
-
-  <p class="mt-4"><a href="/cennik/" class="btn btn--green">Zobraziť cenník →</a></p>
-</div>
+</section>

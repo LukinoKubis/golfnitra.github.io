@@ -3,39 +3,46 @@ layout: layouts/base.njk
 title: "Majstri klubu"
 permalink: /gk-meander/majstri-klubu/
 ---
-<header class="header header--inner">
-  <div class="text-box">
-    <h1 class="heading-primary">
-      <span class="heading-primary-main">Majstri klubu</span>
-      <span class="heading-primary-sub">GK Meander</span>
-    </h1>
+<section class="hero hero--inner">
+  <div class="hero__bg"></div>
+  <div class="hero__content">
+    <p class="hero__eyebrow">GK Meander</p>
+    <h1 class="hero__title">Majstri klubu</h1>
+    <p class="hero__sub">História víťazov</p>
   </div>
-</header>
+</section>
 
-<div class="page-content">
-  <h1>História víťazov klubových majstrovstiev</h1>
+<section class="section">
+  <div class="container--sm">
+    <div class="section-header">
+      <span class="section-label">Tradícia</span>
+      <h2 class="section-title">Klubové majstrovstvá</h2>
+      <p class="section-sub">História víťazov klubových majstrovstiev GK Meander od roku 2018.</p>
+    </div>
 
-  {% for year in club_champions.years %}
-  <div class="champions-year">
-    <h2>{{ year.year }}</h2>
-    {% for t in year.tournaments %}
-    <h3 style="font-size:1.6rem;color:#555;font-weight:700;margin:1.5rem 0 0.8rem;">
-      {% if t.date %}{{ t.date }} — {% endif %}{{ t.name }}
-    </h3>
-    <table class="champions-table">
-      <tbody>
-        {% for r in t.results %}
-        <tr>
-          <td>{{ r.category }}</td>
-          <td>
-            {{ r.winner }}
-            {% if r.score %}<span style="color:#888;font-size:1.3rem;"> ({{ r.score }})</span>{% endif %}
-          </td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-    {% endfor %}
+    <div class="champions-list">
+      {% for year in club_champions.years | reverse %}
+      <div class="champion-year">
+        <div class="champion-year__num">{{ year.year }}</div>
+        <div class="champion-year__tournaments">
+          {% for t in year.tournaments %}
+          <div class="tournament-block">
+            <div class="tournament-block__name">{{ t.name }}</div>
+            {% if t.date %}<div class="tournament-block__date">{{ t.date }}</div>{% endif %}
+            {% for r in t.results %}
+            <div class="tournament-result">
+              <span class="tournament-result__cat">{{ r.category }}</span>
+              <span>
+                <span class="tournament-result__winner">{{ r.winner }}</span>
+                {% if r.score %}<span class="tournament-result__score">({{ r.score }})</span>{% endif %}
+              </span>
+            </div>
+            {% endfor %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
   </div>
-  {% endfor %}
-</div>
+</section>

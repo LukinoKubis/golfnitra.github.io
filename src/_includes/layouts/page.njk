@@ -1,14 +1,13 @@
 ---
 layout: layouts/base.njk
 ---
-<header class="header header--inner">
-  <div class="text-box">
-    <h1 class="heading-primary">
-      <span class="heading-primary-main">{{ title }}</span>
-    </h1>
+<section class="hero hero--inner">
+  <div class="hero__bg"></div>
+  <div class="hero__content">
+    <h1 class="hero__title">{{ title }}</h1>
   </div>
-</header>
+</section>
 
-<div class="page-content">
+<div class="page-body">
   {{ content | safe }}
 </div>

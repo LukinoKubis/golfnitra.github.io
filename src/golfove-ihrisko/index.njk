@@ -4,43 +4,88 @@ title: "Golfové ihrisko"
 description: "9-jamkové ihriská GREEN MEADOWS a GREEN PARK v Ivanke pri Nitre. Driving range, putting green, chipping area."
 permalink: /golfove-ihrisko/
 ---
-<header class="header header--inner">
-  <div class="text-box">
-    <h1 class="heading-primary">
-      <span class="heading-primary-main">Golfové ihrisko</span>
-      <span class="heading-primary-sub">Green Meadows &amp; Green Park</span>
-    </h1>
+<section class="hero hero--inner">
+  <div class="hero__bg"></div>
+  <div class="hero__content">
+    <p class="hero__eyebrow">Ivanka pri Nitre</p>
+    <h1 class="hero__title">Golfové ihrisko</h1>
+    <p class="hero__sub">Green Meadows &amp; Green Park</p>
   </div>
-</header>
+</section>
 
-<div class="page-content">
-  <p style="background:#f0fff8;border-left:.4rem solid #28b485;padding:1.2rem 2rem;font-size:1.5rem;color:#015C39;margin-bottom:3rem;">
-    <strong>2026:</strong> Ihriská GREEN MEADOWS a GREEN PARK sa striedajú — sledujte značenie pri vstupe do areálu.
-  </p>
+<section class="section">
+  <div class="container">
+    <div class="notice">
+      <strong>2026:</strong> Ihriská GREEN MEADOWS a GREEN PARK sa striedajú — sledujte značenie pri vstupe do areálu.
+    </div>
 
-  <div class="course-cards">
-    {% for course in collections.courses %}
-    <a href="/golfove-ihrisko/{{ course.data.slug }}/" class="course-card">
-      <img src="{{ course.data.hero_image }}" alt="{{ course.data.title }}" class="course-card__img" loading="lazy">
-      <div class="course-card__body">
-        <div class="course-card__title">{{ course.data.title }}</div>
-        <ul class="course-card__features">
-          {% for f in course.data.features | limit(5) %}
-          <li>{{ f }}</li>
-          {% endfor %}
-        </ul>
+    <div class="section-header section-header--center">
+      <span class="section-label">Dve ihriská</span>
+      <h2 class="section-title">Vyberte si ihrisko</h2>
+      <p class="section-sub">Obe 9-jamkové ihriská ponúkajú jedinečný zážitok — Green Meadows s výhľadom na lúky, Green Park s prírodným rázom.</p>
+    </div>
+
+    <div class="courses-grid">
+      {% for course in collections.courses %}
+      <a href="/golfove-ihrisko/{{ course.data.slug }}/" class="course-card">
+        <div class="course-card__img-wrap">
+          <img src="{{ course.data.hero_image }}" alt="{{ course.data.title }}" class="course-card__img" loading="lazy">
+          <div class="course-card__overlay">
+            <div class="course-card__tag">9-jamkové ihrisko</div>
+            <div class="course-card__name">{{ course.data.title }}</div>
+          </div>
+        </div>
+        <div class="course-card__body">
+          <ul class="course-card__features">
+            {% for f in course.data.features | limit(5) %}
+            <li>{{ f }}</li>
+            {% endfor %}
+          </ul>
+          <div class="course-card__cta">Detail ihriska →</div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section--green">
+  <div class="container">
+    <div class="section-header section-header--center">
+      <span class="section-label">Areál</span>
+      <h2 class="section-title">Čo nájdete v areáli</h2>
+    </div>
+    <div class="quicklinks-grid">
+      <div class="quicklink">
+        <span class="quicklink__icon">🏌</span>
+        <div class="quicklink__title">Driving range 250 m</div>
+        <div class="quicklink__desc">Reálne fervejové odpalisko aj podložky pre dlhú hru</div>
       </div>
-    </a>
-    {% endfor %}
+      <div class="quicklink">
+        <span class="quicklink__icon">⛳</span>
+        <div class="quicklink__title">Patovací green</div>
+        <div class="quicklink__desc">Dva druhy tráv — precvičte si patingovú techniku</div>
+      </div>
+      <div class="quicklink">
+        <span class="quicklink__icon">🎯</span>
+        <div class="quicklink__title">Chipping area 2×</div>
+        <div class="quicklink__desc">Tri čipovacie gríny pre krátku hru a bunkerovú techniku</div>
+      </div>
+      <div class="quicklink">
+        <span class="quicklink__icon">🍽</span>
+        <div class="quicklink__title">Terasa &amp; ketering</div>
+        <div class="quicklink__desc">Firemné akcie a turnaje, ketering od bagety až po *****</div>
+      </div>
+      <div class="quicklink">
+        <span class="quicklink__icon">🏢</span>
+        <div class="quicklink__title">Team building</div>
+        <div class="quicklink__desc">Firemné podujatia od 20,- EUR/osoba</div>
+      </div>
+      <div class="quicklink">
+        <span class="quicklink__icon">📱</span>
+        <div class="quicklink__title">Samoobsluha &amp; QR</div>
+        <div class="quicklink__desc"><a href="/golfove-ihrisko/samoobsluha/">Platba green fee QR kódom</a></div>
+      </div>
+    </div>
   </div>
-
-  <h2>Čo nájdete v areáli</h2>
-  <ul>
-    <li>Driving range 250 m — reálne fervejové odpalisko a podložky</li>
-    <li>Patovací green — dva druhy tráv</li>
-    <li>Chipping area 2× — tri čipovacie gríny</li>
-    <li>Terasa pre firemné akcie a turnaje</li>
-    <li>Turnajový ketering od bagety až po *****</li>
-    <li>Team building od 20,- EUR/osoba</li>
-  </ul>
-</div>
+</section>

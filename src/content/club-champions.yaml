@@ -1,4 +1,14 @@
 years:
+  - year: 2025
+    tournaments:
+      - name: "Majstrovstvá GK Meander na rany"
+        date: "16.–17.8.2025"
+        results:
+          - category: "Majsterka GKM"
+            winner: "Adriana Melničáková"
+          - category: "Majster GKM"
+            winner: "Rastislav Melničák"
+
   - year: 2024
     tournaments:
       - name: "Majstrovstvá GK Meander na rany"

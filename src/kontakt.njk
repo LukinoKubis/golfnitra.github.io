@@ -1,0 +1,76 @@
+---
+layout: layouts/base.njk
+title: "Kontakt"
+permalink: /kontakt/
+---
+<header class="header header--inner">
+  <div class="text-box">
+    <h1 class="heading-primary">
+      <span class="heading-primary-main">Kontakt</span>
+    </h1>
+  </div>
+</header>
+
+<div class="page-content">
+  <h1>Kontakt</h1>
+
+  <div class="contact-grid">
+    <div class="contact-block">
+      <div class="contact-block__title">Golfové ihrisko</div>
+      <p>
+        <strong>GREEN MEADOWS &amp; GREEN PARK</strong><br>
+        {{ site.address_ihrisko }}<br>
+        Tel.: <a href="tel:{{ site.phone }}">{{ site.phone }}</a><br>
+        E-mail: <a href="mailto:{{ site.email }}">{{ site.email }}</a><br>
+        Web: <a href="https://www.{{ site.web }}" target="_blank" rel="noopener">{{ site.web }}</a>
+      </p>
+    </div>
+
+    <div class="contact-block">
+      <div class="contact-block__title">Golfový klub MEANDER o.z.</div>
+      <p>
+        {{ site.address_klub }}<br>
+        IČO: {{ site.ico_klub }}<br>
+        Prezident: {{ site.president }}<br>
+        Tel.: <a href="tel:{{ site.phone }}">{{ site.phone }}</a><br>
+        E-mail: <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      </p>
+    </div>
+
+    <div class="contact-block">
+      <div class="contact-block__title">GM-Golf s.r.o. (prevádzka ihriska)</div>
+      <p>
+        {{ site.address_klub }}<br>
+        IČO: {{ site.ico_prevadzka }}<br>
+        Tel.: <a href="tel:{{ site.phone }}">{{ site.phone }}</a><br>
+        E-mail: <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      </p>
+    </div>
+
+    <div class="contact-block">
+      <div class="contact-block__title">Bankové spojenie</div>
+      <p>
+        <strong>GK Meander o.z. (členstvo)</strong><br>
+        Tatra banka a.s.<br>
+        č.ú. {{ site.bank_klub }}<br>
+        IBAN: {{ site.iban }}<br>
+        <br>
+        <strong>GM-Golf s.r.o. (green fee)</strong><br>
+        Tatra banka a.s.<br>
+        č.ú. {{ site.bank_prevadzka }}
+      </p>
+    </div>
+  </div>
+
+  <h2 class="mt-4">Sledujte nás</h2>
+  <p>
+    <a href="{{ site.facebook }}" target="_blank" rel="noopener">Facebook — Green Meadows golfové ihrisko</a><br>
+    <a href="{{ site.youtube }}" target="_blank" rel="noopener">YouTube — video pozvánka</a>
+  </p>
+
+  <h2 class="mt-4">Newsletter</h2>
+  <p>
+    Záujem o novinky e-mailom? Napíšte nám na
+    <a href="mailto:{{ site.email }}">{{ site.email }}</a> a zaradíme Vás do zoznamu odberateľov.
+  </p>
+</div>

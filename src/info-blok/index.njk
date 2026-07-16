@@ -1,0 +1,26 @@
+---
+layout: layouts/base.njk
+title: "Info-blok"
+permalink: /info-blok/
+---
+<header class="header header--inner">
+  <div class="text-box">
+    <h1 class="heading-primary">
+      <span class="heading-primary-main">Info-blok</span>
+    </h1>
+  </div>
+</header>
+
+<div class="page-content">
+  <h1>Info-blok</h1>
+  <p>Užitočné informácie pre hráčov a záujemcov o golf.</p>
+
+  <div class="info-blok-grid">
+    {% for item in collections.pages %}
+    <a href="{{ item.data.permalink }}" class="info-blok-item">{{ item.data.title }}</a>
+    {% endfor %}
+    <a href="https://booking.reservanto.sk/form/?id=4271" target="_blank" rel="noopener" class="info-blok-item">
+      Rezervácia tréningu ↗
+    </a>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+---
+layout: layouts/base.njk
+title: "9-jamkové ihrisko Green Meadows"
+permalink: /golfove-ihrisko/green-meadows/
+---
+{% set course = null %}
+{% for c in collections.courses %}
+  {% if c.data.slug == "green-meadows" %}{% set course = c %}{% endif %}
+{% endfor %}
+
+<header class="header header--inner header--gm">
+  <div class="text-box">
+    <h1 class="heading-primary">
+      <span class="heading-primary-main">Green Meadows</span>
+      <span class="heading-primary-sub">9-jamkové ihrisko</span>
+    </h1>
+  </div>
+</header>
+
+<div class="page-content">
+  <p style="background:#f0fff8;border-left:.4rem solid #28b485;padding:1.2rem 2rem;font-size:1.5rem;color:#015C39;margin-bottom:3rem;">
+    <strong>2026:</strong> Ihriská GREEN MEADOWS a GREEN PARK sa striedajú — sledujte značenie pri vstupe do areálu.
+  </p>
+
+  {% if course %}
+  <h2>Vybavenie ihriska</h2>
+  <ul>
+    {% for f in course.data.features %}
+    <li>{{ f }}</li>
+    {% endfor %}
+  </ul>
+
+  <h2>Mapa ihriska</h2>
+  <img src="{{ course.data.course_map }}" alt="Mapa 9-jamkového ihriska Green Meadows 2026" style="max-width:100%;height:auto;border:0.1rem solid #e5e5e5;" loading="lazy">
+
+  <div style="margin-top:2rem;">
+    {{ course.templateContent | safe }}
+  </div>
+  {% endif %}
+
+  <p class="mt-4"><a href="/cennik/" class="btn btn--green">Zobraziť cenník →</a></p>
+</div>

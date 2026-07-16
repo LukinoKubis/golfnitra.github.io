@@ -1,0 +1,86 @@
+---
+layout: layouts/base.njk
+title: "GK Meander — Členstvo"
+permalink: /gk-meander/
+---
+<header class="header header--inner header--gm">
+  <div class="text-box">
+    <h1 class="heading-primary">
+      <span class="heading-primary-main">GK Meander</span>
+      <span class="heading-primary-sub">Golfový klub</span>
+    </h1>
+  </div>
+</header>
+
+<div class="page-content">
+  <h1>Golfový klub MEANDER Ivanka pri Nitre</h1>
+
+  <p>
+    Stať sa členom Golfového klubu MEANDER znamená, že budete využívať mnohé výhody, ktoré posúvajú golf z hľadiska
+    finančnej náročnosti na úroveň lyžovania. Golf si môžete vďaka vhodnej klíme u Nás užívať minimálne 7 mesiacov
+    v roku. Každý golfista by mal mať svoj domovský klub a veríme, že naše podmienky Vás oslovia.
+  </p>
+
+  <p style="font-size:1.5rem;font-weight:700;color:#015C39;">
+    NO TEETIME NO STRESS — počet riadnych členov GK Meander je obmedzený na 150.
+  </p>
+
+  <h2>Členské príspevky 2026</h2>
+
+  <div class="membership-grid">
+    {% for tier in membership.tiers %}
+    <div class="membership-card{% if tier.featured %} membership-card--featured{% endif %}">
+      {% if tier.featured %}<div class="membership-card__badge">Odporúčame</div>{% endif %}
+      <div class="membership-card__title">{{ tier.name }}</div>
+      <p style="font-size:1.3rem;color:#888;text-align:center;margin-bottom:1.5rem;">{{ tier.limit }}</p>
+
+      <ul class="membership-card__prices">
+        {% for p in tier.prices %}
+        <li>
+          <span>{{ p.category }}</span>
+          <span class="membership-card__price-amount">{{ p.amount }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+
+      <h3 style="font-size:1.4rem;color:#555;text-transform:uppercase;letter-spacing:.08em;margin-bottom:1rem;">Výhody</h3>
+      <ul class="membership-card__benefits">
+        {% for b in tier.benefits %}
+        <li>{{ b }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  </div>
+
+  <h2>Vstupný poplatok</h2>
+  <p>{{ membership.entry_fee_note }}</p>
+  <ul>
+    <li>Dospelý 18–60 rokov: <strong>500,- EUR</strong></li>
+    <li>Junior do 18 rokov a senior nad 60 rokov: <strong>120,- EUR</strong></li>
+  </ul>
+
+  <h2>Ďalšie podmienky a poznámky</h2>
+  <ul>
+    {% for note in membership.notes %}
+    <li>{{ note }}</li>
+    {% endfor %}
+  </ul>
+
+  <h2>Bankové spojenie</h2>
+  <p>
+    <strong>Golfový klub MEANDER o.z.</strong><br>
+    Tatra banka a.s. — č.ú. {{ site.bank_klub }}<br>
+    IBAN: {{ site.iban }}<br>
+    Do správy pre prijímateľa uveďte meno alebo číslo registrácie SKGA.
+  </p>
+
+  <h2>Dokumenty</h2>
+  <ul>
+    <li><a href="http://idas.sk/gm-golf/pics/stanovy.pdf" target="_blank" rel="noopener">Stanovy Golfového klubu Meander (PDF)</a></li>
+  </ul>
+
+  <p class="mt-4">
+    <a href="/kontakt/" class="btn btn--green">Kontaktujte nás pre členstvo →</a>
+  </p>
+</div>

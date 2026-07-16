@@ -1,0 +1,41 @@
+---
+layout: layouts/base.njk
+title: "Majstri klubu"
+permalink: /gk-meander/majstri-klubu/
+---
+<header class="header header--inner">
+  <div class="text-box">
+    <h1 class="heading-primary">
+      <span class="heading-primary-main">Majstri klubu</span>
+      <span class="heading-primary-sub">GK Meander</span>
+    </h1>
+  </div>
+</header>
+
+<div class="page-content">
+  <h1>História víťazov klubových majstrovstiev</h1>
+
+  {% for year in club_champions.years %}
+  <div class="champions-year">
+    <h2>{{ year.year }}</h2>
+    {% for t in year.tournaments %}
+    <h3 style="font-size:1.6rem;color:#555;font-weight:700;margin:1.5rem 0 0.8rem;">
+      {% if t.date %}{{ t.date }} — {% endif %}{{ t.name }}
+    </h3>
+    <table class="champions-table">
+      <tbody>
+        {% for r in t.results %}
+        <tr>
+          <td>{{ r.category }}</td>
+          <td>
+            {{ r.winner }}
+            {% if r.score %}<span style="color:#888;font-size:1.3rem;"> ({{ r.score }})</span>{% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endfor %}
+  </div>
+  {% endfor %}
+</div>

@@ -1,0 +1,80 @@
+---
+layout: layouts/base.njk
+title: "Domov"
+description: "Golfové ihrisko GREEN MEADOWS a GREEN PARK, Ivanka pri Nitre. Golfový klub MEANDER — členstvo, cenník, tréning."
+---
+<header class="header">
+  <div class="text-box">
+    <h1 class="heading-primary">
+      <span class="heading-primary-main">Green Meadows</span>
+      <span class="heading-primary-sub">Ivanka pri Nitre</span>
+    </h1>
+    <a href="/golfove-ihrisko/" class="btn btn--white">Preskúmajte ihrisko</a>
+  </div>
+</header>
+
+<section class="home-intro">
+  <div class="home-intro__container">
+    <h2 class="heading-secondary-main">Vitajte na golfe v Ivanke pri Nitre</h2>
+    <p class="heading-secondary-sub">
+      9-jamkové golfové ihriská GREEN MEADOWS a GREEN PARK pre všetky hráčske úrovne, tréningové plochy, výuka golfu
+      a golfové firemné podujatia. Ihrisko je sídlom Golfového klubu Meander — členovia môžu využívať ihrisko
+      počas i mimo hlavnej sezóny už od <strong>250,- EUR</strong>. Celý kurz golfu vrátane voľnej golfovej hry
+      môžete získať za <strong>450,- EUR</strong>.
+    </p>
+  </div>
+</section>
+
+{% if collections.announcements | length %}
+<section class="announcements">
+  <div class="announcements__title">Aktuálne informácie</div>
+  {% for post in collections.announcements | limit(5) %}
+  <div class="announcement-card{% if post.data.pinned %} announcement-card--pinned{% endif %}">
+    <div class="announcement-card__date">{{ post.date | dateFormat }}</div>
+    <div class="announcement-card__title">{{ post.data.title }}</div>
+    <div class="announcement-card__body">{{ post.templateContent | safe }}</div>
+  </div>
+  {% endfor %}
+</section>
+{% endif %}
+
+<div class="quick-links">
+  <a href="/golfove-ihrisko/" class="quick-link-card">
+    <div class="quick-link-card__icon">⛳</div>
+    <div class="quick-link-card__title">Golfové ihrisko</div>
+    <div class="quick-link-card__desc">Green Meadows &amp; Green Park — 9-jamkové ihriská</div>
+  </a>
+  <a href="/gk-meander/" class="quick-link-card">
+    <div class="quick-link-card__icon">🏌️</div>
+    <div class="quick-link-card__title">GK Meander</div>
+    <div class="quick-link-card__desc">Členstvo, výhody a podmienky vstupu do klubu</div>
+  </a>
+  <a href="/cennik/" class="quick-link-card">
+    <div class="quick-link-card__icon">💶</div>
+    <div class="quick-link-card__title">Cenník 2026</div>
+    <div class="quick-link-card__desc">Green fee, voučery, otváracie hodiny</div>
+  </a>
+  <a href="/info-blok/treningy-zelene-karty/" class="quick-link-card">
+    <div class="quick-link-card__icon">🎓</div>
+    <div class="quick-link-card__title">Tréningy</div>
+    <div class="quick-link-card__desc">Kurzy, zelené karty, individuálne tréningy</div>
+  </a>
+  <a href="https://booking.reservanto.sk/form/?id=4271" target="_blank" rel="noopener" class="quick-link-card">
+    <div class="quick-link-card__icon">📅</div>
+    <div class="quick-link-card__title">Rezervácia tréningu</div>
+    <div class="quick-link-card__desc">Online rezervácia termínu tréningu</div>
+  </a>
+  <a href="/kontakt/" class="quick-link-card">
+    <div class="quick-link-card__icon">📍</div>
+    <div class="quick-link-card__title">Kontakt</div>
+    <div class="quick-link-card__desc">Adresa, telefón, email a fakturačné údaje</div>
+  </a>
+</div>
+
+<section class="holes">
+  <div class="holes-container">
+    <div class="heading-tertiary">
+      <h2 class="heading-tertiary-main">Preskúmajte golfové ihrisko Green Meadows jamku za jamkou</h2>
+    </div>
+  </div>
+</section>

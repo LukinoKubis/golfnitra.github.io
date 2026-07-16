@@ -1,0 +1,46 @@
+---
+layout: layouts/base.njk
+title: "Golfové ihrisko"
+description: "9-jamkové ihriská GREEN MEADOWS a GREEN PARK v Ivanke pri Nitre. Driving range, putting green, chipping area."
+permalink: /golfove-ihrisko/
+---
+<header class="header header--inner">
+  <div class="text-box">
+    <h1 class="heading-primary">
+      <span class="heading-primary-main">Golfové ihrisko</span>
+      <span class="heading-primary-sub">Green Meadows &amp; Green Park</span>
+    </h1>
+  </div>
+</header>
+
+<div class="page-content">
+  <p style="background:#f0fff8;border-left:.4rem solid #28b485;padding:1.2rem 2rem;font-size:1.5rem;color:#015C39;margin-bottom:3rem;">
+    <strong>2026:</strong> Ihriská GREEN MEADOWS a GREEN PARK sa striedajú — sledujte značenie pri vstupe do areálu.
+  </p>
+
+  <div class="course-cards">
+    {% for course in collections.courses %}
+    <a href="/golfove-ihrisko/{{ course.data.slug }}/" class="course-card">
+      <img src="{{ course.data.hero_image }}" alt="{{ course.data.title }}" class="course-card__img" loading="lazy">
+      <div class="course-card__body">
+        <div class="course-card__title">{{ course.data.title }}</div>
+        <ul class="course-card__features">
+          {% for f in course.data.features | limit(5) %}
+          <li>{{ f }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+
+  <h2>Čo nájdete v areáli</h2>
+  <ul>
+    <li>Driving range 250 m — reálne fervejové odpalisko a podložky</li>
+    <li>Patovací green — dva druhy tráv</li>
+    <li>Chipping area 2× — tri čipovacie gríny</li>
+    <li>Terasa pre firemné akcie a turnaje</li>
+    <li>Turnajový ketering od bagety až po *****</li>
+    <li>Team building od 20,- EUR/osoba</li>
+  </ul>
+</div>

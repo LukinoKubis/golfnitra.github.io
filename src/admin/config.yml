@@ -2,12 +2,8 @@ backend:
   name: github
   repo: lukinokubis/golfnitra.github.io
   branch: main
-  # PAT login — user enters their GitHub Personal Access Token in the CMS UI.
-  # To upgrade to OAuth later, deploy sveltia-cms-auth to Cloudflare Workers,
-  # create a GitHub OAuth App, then add:
-  #   base_url: https://YOUR_WORKER.workers.dev
-  # and remove the auth_type line below.
-  auth_type: implicit
+  auth_type: pkce
+  client_id: REPLACE_WITH_YOUR_CLIENT_ID
 
 media_folder: src/img
 public_folder: /img

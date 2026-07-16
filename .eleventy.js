@@ -1,9 +1,11 @@
 const { DateTime } = require("luxon");
 const yaml = require("js-yaml");
+const { HtmlBasePlugin } = require("@11ty/eleventy");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
   eleventyConfig.addDataExtension("yml", (contents) => yaml.load(contents));
+  eleventyConfig.addPlugin(HtmlBasePlugin);
   // Passthrough copies
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/img");
@@ -39,6 +41,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("limit", (arr, n) => arr.slice(0, n));
 
   return {
+    pathPrefix: "/golfnitra.github.io/",
     dir: {
       input: "src",
       output: "_site",

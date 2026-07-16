@@ -55,7 +55,7 @@ Golfový klub MEANDER Ivanka pri Nitre
 - Pred tréningom sa rozcvičte — využijete tým efektívnejšie čas tréningu.
 - Vo výnimočných prípadoch je možné dohodnúť tréning mimo časov voľných v rezervačnom systéme.
 
-[Rezervovať tréning →](/rezervacia/){.btn .btn--green}
+<a href="/rezervacia/" class="btn btn--green">Rezervovať tréning →</a>
 
   </div>
 </div>

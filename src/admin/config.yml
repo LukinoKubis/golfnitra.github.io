@@ -3,7 +3,7 @@ backend:
   repo: lukinokubis/golfnitra.github.io
   branch: main
   auth_type: pkce
-  client_id: REPLACE_WITH_YOUR_CLIENT_ID
+  client_id: Ov23lijlqzIVMbTmkRKO
 
 media_folder: src/img
 public_folder: /img

@@ -2,7 +2,7 @@ backend:
   name: github
   repo: lukinokubis/golfnitra.github.io
   branch: main
-  auth_type: pkce
+  base_url: https://REPLACE_WITH_YOUR_WORKER.workers.dev
   client_id: Ov23lijlqzIVMbTmkRKO
 
 media_folder: src/img
